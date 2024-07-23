@@ -1,3 +1,4 @@
+![CI](https://github.com/pedropagotto/tech-challenge-fiap-01/actions/workflows/ci.yml/badge.svg)
 # Tech Challenge FIAP 01
 
 
