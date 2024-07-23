@@ -21,9 +21,9 @@
 
 
 # Ferramentas:
-🎈 - Miro.
+🎈 - [Miro](https://miro.com/app/board/uXjVKwg7ktM=/?share_link_id=761946195858)
 
-🎈 -  Github para versionamento.
+🎈 -  Github
 
 
 # Para  iniciar o banco:
