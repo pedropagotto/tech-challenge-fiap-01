@@ -1,7 +1,24 @@
+using System.Reflection;
 using API.Config;
 using API.Middlewares;
+using Infra;
+using Microsoft.EntityFrameworkCore;
+
+var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+var config = new ConfigurationBuilder()
+    .SetBasePath(Environment.CurrentDirectory)
+    .AddJsonFile("appsettings.json", false, true)
+    .AddJsonFile($"appsettings.{environmentName}.json", true, true)
+    .AddUserSecrets(Assembly.GetExecutingAssembly(), true)
+    .AddEnvironmentVariables()
+    .Build();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.EnableSensitiveDataLogging()
+        .UseNpgsql(config.GetConnectionString("PostgresConnectionString")));
 
 // Add services to the container.
 
