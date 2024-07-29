@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
 namespace API.Config
@@ -20,7 +21,7 @@ namespace API.Config
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "API para cadastro de contatos",
+                    Title = "Tech Challenge FIAP 01 - Cadastro Contatos",
                     Description = "Esta API fornece serviços para cadastro, consulta e edição de contatos.",
                     Contact = new OpenApiContact
                     {
@@ -35,6 +36,8 @@ namespace API.Config
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
 
+                //Incluir exemplos no swagger
+                options.ExampleFilters();
 
                 //Configs para autenticação JWT
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
@@ -62,6 +65,8 @@ namespace API.Config
                 });
 
             });
+
+            services.AddSwaggerExamplesFromAssemblyOf<Program>();
 
             return services;
         }
