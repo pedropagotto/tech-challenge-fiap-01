@@ -4,10 +4,10 @@ namespace Domain.Abstractions
 {
     public interface IRepository<T> where T : EntityBase
     {
-        IList<T> ListAll();
-        T? GetById(int id);
-        void Create(T entidade);
-        void Update(T entidade);
-        void Delete(int id);
+        Task<IList<T>> ListAll();
+        Task<T>? GetById(int id);
+        Task<T> Create(T entity);
+        Task<T> Update(T entity);
+        Task Delete(int id);
     }
 }

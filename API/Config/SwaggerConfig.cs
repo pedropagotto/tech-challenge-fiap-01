@@ -9,12 +9,6 @@ namespace API.Config
         public static IServiceCollection AddSwaggerConfig(this IServiceCollection services)
         {
 
-            services.AddSwaggerGen(c =>
-            {
-
-            });
-
-
             services.AddSwaggerGen(options =>
             {
                 // Configuração do título e descrição

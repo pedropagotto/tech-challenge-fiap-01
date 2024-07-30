@@ -7,7 +7,7 @@
 
         protected EntityBase()
         {
-            CreatedAt = DateTime.Now;
+            CreatedAt = DateTime.UtcNow;
         }
     }
 }
