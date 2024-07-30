@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postech
       POSTGRES_PASSWORD: postech
-      POSTGRES_DB: techchallange01
+      POSTGRES_DB: techchallenge01
     ports:
       - "5432:5432"
     volumes:

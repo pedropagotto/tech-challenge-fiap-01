@@ -8,7 +8,7 @@ namespace Application.Services
         Task<List<ContactResponseModel>> FilterByDdd(string Ddd);
         Task<ContactResponseModel>? GetById(int id);
         Task<ContactResponseModel> Create(ContactRequestModel contact);
-        Task<ContactResponseModel> Update(ContactRequestModel contact);
+        Task<ContactResponseModel> Update(int id, ContactRequestModel contact);
         Task Delete(int id);
     }
 }

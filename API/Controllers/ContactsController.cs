@@ -62,7 +62,7 @@ namespace API.Controllers
             //incluir validacao
             var response = await _contactService.Create(contact);
 
-            return CreatedAtAction(nameof(GetContact), response);
+            return CreatedAtAction(nameof(GetContact), new { id = response.Id }, response);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace API.Controllers
         {
             //incluir validacao
 
-            var response = await _contactService.Update(contact);
+            var response = await _contactService.Update(id, contact);
 
             if (response is null)
             {

@@ -1,8 +1,8 @@
-using System.Reflection;
 using API.Config;
 using API.Middlewares;
 using Infra;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -28,6 +28,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfig();
 
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+builder.Services.AddDependencyInjectionConfig();
 
 var app = builder.Build();
 
