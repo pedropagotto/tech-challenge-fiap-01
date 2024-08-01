@@ -1,4 +1,5 @@
 ﻿using API.Middlewares.Exceptions;
+using API.Validation;
 using Application.Services;
 using Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -60,6 +61,9 @@ namespace API.Controllers
         public async Task<ActionResult<ContactResponseModel>> CreateContact(ContactRequestModel contact)
         {
             //incluir validacao
+            ContactValidator validator = new();
+            validator.IsValid(contact);
+
             var response = await _contactService.Create(contact);
 
             return CreatedAtAction(nameof(GetContact), new { id = response.Id }, response);
@@ -77,6 +81,8 @@ namespace API.Controllers
         public async Task<ActionResult<ContactResponseModel>> PutContact(int id, ContactRequestModel contact)
         {
             //incluir validacao
+            ContactValidator validator = new();
+            validator.IsValid(contact);
 
             var response = await _contactService.Update(id, contact);
 
