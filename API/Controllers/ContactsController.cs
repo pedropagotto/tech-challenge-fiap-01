@@ -105,7 +105,11 @@ namespace API.Controllers
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteContact(int id)
         {
-            await _contactService.Delete(id);
+            var success = await _contactService.Delete(id);
+            if (!success)
+            {
+                NotFoundException.Throw("001", "Contato não encontrado.");
+            }
 
             return NoContent();
         }

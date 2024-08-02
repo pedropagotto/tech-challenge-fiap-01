@@ -9,6 +9,6 @@ namespace Application.Services
         Task<ContactResponseModel>? GetById(int id);
         Task<ContactResponseModel> Create(ContactRequestModel contact);
         Task<ContactResponseModel> Update(int id, ContactRequestModel contact);
-        Task Delete(int id);
+        Task<bool> Delete(int id);
     }
 }
