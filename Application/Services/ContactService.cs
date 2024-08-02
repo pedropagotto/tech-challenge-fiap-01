@@ -93,9 +93,10 @@ namespace Application.Services
             return response;
         }
 
-        public async Task Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            await _contactRepository.Delete(id);
+            var deleted = await _contactRepository.Delete(id);
+            return deleted == 1;
         }
 
         private static ContactResponseModel MapToResponseModel(Contact contact)

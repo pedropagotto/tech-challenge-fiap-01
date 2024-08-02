@@ -31,10 +31,16 @@ namespace Infra.Repository
             return entity;
         }
 
-        public async Task Delete(int id)
+        public async Task<int> Delete(int id)
         {
-            _dbSet.Remove(await GetById(id));
-            _context.SaveChanges();
+            var entity = await GetById(id);
+
+            if (entity is null) return 0;
+
+            _dbSet.Remove(entity);
+            var totalDeleted = await _context.SaveChangesAsync();
+
+            return totalDeleted;
         }
 
         public async Task<T>? GetById(int id) => await _dbSet.AsNoTracking().FirstOrDefaultAsync(entity => entity.Id == id);

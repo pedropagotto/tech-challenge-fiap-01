@@ -8,6 +8,6 @@ namespace Domain.Abstractions
         Task<T>? GetById(int id);
         Task<T> Create(T entity);
         Task<T> Update(T entity);
-        Task Delete(int id);
+        Task<int> Delete(int id);
     }
 }
