@@ -1,7 +1,8 @@
-﻿
-using API.Middlewares.Exceptions;
-using System.Net;
+﻿using System.Net;
+using System.Security.Authentication;
 using System.Text.Json;
+using API.Middlewares.Exceptions;
+using Domain.Shared;
 
 namespace API.Middlewares
 {

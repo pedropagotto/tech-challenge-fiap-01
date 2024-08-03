@@ -1,4 +1,5 @@
 ﻿using Application.ViewModels;
+using Application.ViewModels.Contact;
 
 namespace Application.Services
 {

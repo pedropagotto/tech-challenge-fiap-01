@@ -1,4 +1,6 @@
-﻿namespace API.SwaggerExamples
+﻿using Application.ViewModels.Contact;
+
+namespace API.SwaggerExamples
 {
     using Application.ViewModels;
     using Swashbuckle.AspNetCore.Filters;

@@ -1,4 +1,5 @@
 ﻿using Application.ViewModels;
+using Application.ViewModels.Contact;
 using Domain.Abstractions;
 using Domain.Entities;
 

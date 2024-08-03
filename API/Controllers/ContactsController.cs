@@ -1,13 +1,16 @@
 ﻿using API.Middlewares.Exceptions;
 using API.Validation;
 using Application.Services;
-using Application.ViewModels;
+using Application.ViewModels.Contact;
+using Domain.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ContactsController : ControllerBase
     {
         private readonly IContactService _contactService;

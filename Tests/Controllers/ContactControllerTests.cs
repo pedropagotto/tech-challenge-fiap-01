@@ -2,6 +2,8 @@
 using API.Middlewares.Exceptions;
 using Application.Services;
 using Application.ViewModels;
+using Application.ViewModels.Contact;
+using Domain.Shared;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
