@@ -24,9 +24,9 @@ namespace API.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IList<ContactResponseModel>>> ListAllContacts([FromQuery] string? DDD)
+        public async Task<ActionResult<IList<ContactResponseModel>>> ListAllContacts([FromQuery] string? DDD = null)
         {
-            if (DDD is not null) return await _contactService.FilterByDdd(DDD);
+            if (DDD is not null) return Ok(await _contactService.FilterByDdd(DDD));
 
             return Ok(await _contactService.ListAll());
         }
@@ -39,7 +39,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ContactResponseModel>> GetContact(int id)
+        public async Task<ActionResult<ContactResponseModel>> GetContact([FromRoute] int id)
         {
             var contact = await _contactService.GetById(id)!;
 
@@ -48,7 +48,7 @@ namespace API.Controllers
                 NotFoundException.Throw("001", "Contato não encontrado.");
             }
 
-            return contact!;
+            return Ok(contact!);
         }
 
         /// <summary>
@@ -58,9 +58,8 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ContactResponseModel>> CreateContact(ContactRequestModel contact)
+        public async Task<ActionResult<ContactResponseModel>> CreateContact([FromBody] ContactRequestModel contact)
         {
-            //incluir validacao
             ContactValidator validator = new();
             validator.IsValid(contact);
 
@@ -78,9 +77,8 @@ namespace API.Controllers
         [ProducesResponseType(typeof(ValidationErrorModel), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ContactResponseModel>> PutContact(int id, ContactRequestModel contact)
+        public async Task<ActionResult<ContactResponseModel>> PutContact([FromRoute] int id, [FromBody] ContactRequestModel contact)
         {
-            //incluir validacao
             ContactValidator validator = new();
             validator.IsValid(contact);
 
@@ -103,7 +101,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> DeleteContact(int id)
+        public async Task<ActionResult> DeleteContact([FromRoute] int id)
         {
             var success = await _contactService.Delete(id);
             if (!success)
