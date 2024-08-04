@@ -1,4 +1,4 @@
-﻿namespace API.Middlewares.Exceptions
+﻿namespace Domain.Shared
 {
     public class ValidationErrorModel : ErrorModel
     {
@@ -9,6 +9,10 @@
         {
             Details = details;
             Fields = fields;
+        }
+        
+        public ValidationErrorModel(string code, string message) : base(code, message)
+        {
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace API.Middlewares.Exceptions
+﻿namespace Domain.Shared
 {
     public class Field
     {

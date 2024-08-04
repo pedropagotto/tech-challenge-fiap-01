@@ -1,5 +1,6 @@
-﻿using API.Middlewares.Exceptions;
-using Application.ViewModels;
+﻿using Application.ViewModels;
+using Application.ViewModels.Contact;
+using Domain.Shared;
 using FluentValidation;
 
 namespace API.Validation

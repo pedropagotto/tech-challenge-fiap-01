@@ -1,4 +1,4 @@
-﻿using API.Middlewares.Exceptions;
+﻿using Domain.Shared;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace API.SwaggerExamples
