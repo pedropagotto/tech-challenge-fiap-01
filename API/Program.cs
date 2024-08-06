@@ -1,12 +1,12 @@
 using API.Config;
-using API.Middlewares;
-using Infra;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 using API.Extensions;
+using API.Middlewares;
 using Application.Mappings;
 using AutoMapper;
 using Common.Config;
+using Infra;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -33,6 +33,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.JwtConfig(configuration);
 builder.Services.AddSwaggerConfig();
+builder.Services.AddCorsConfig();
 
 //AutoMapper
 var mapperConfig = new MapperConfiguration(mc =>
