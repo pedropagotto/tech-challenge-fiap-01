@@ -1,5 +1,4 @@
-﻿using Application.ViewModels;
-using Application.ViewModels.Contact;
+﻿using Application.ViewModels.Contact;
 using Domain.Abstractions;
 using Domain.Entities;
 
@@ -86,6 +85,7 @@ namespace Application.Services
             var entityToUpdate = MapToUpdateEntity(entity, contactUpdateModel);
 
             entityToUpdate.Id = id;
+            entityToUpdate.UpdatedAt = DateTime.UtcNow;
 
             var updatedEntity = await _contactRepository.Update(entityToUpdate);
 
@@ -106,6 +106,7 @@ namespace Application.Services
             {
                 Id = contact.Id,
                 CreatedAt = contact.CreatedAt,
+                UpdatedAt = contact.UpdatedAt,
                 Name = contact.Name,
                 Ddd = contact.Ddd,
                 Phone = contact.Phone,
@@ -119,6 +120,7 @@ namespace Application.Services
             var entity = new Contact()
             {
                 CreatedAt = responseModel.CreatedAt,
+                UpdatedAt = responseModel.UpdatedAt,
                 Name = responseModel.Name,
                 Ddd = responseModel.Ddd,
                 Phone = responseModel.Phone,

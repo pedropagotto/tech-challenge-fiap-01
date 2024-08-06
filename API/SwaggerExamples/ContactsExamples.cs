@@ -2,7 +2,6 @@
 
 namespace API.SwaggerExamples
 {
-    using Application.ViewModels;
     using Swashbuckle.AspNetCore.Filters;
 
     public class ContactRequestExample : IExamplesProvider<ContactRequestModel>
@@ -26,7 +25,8 @@ namespace API.SwaggerExamples
             return new ContactResponseModel
             {
                 Id = 1,
-                CreatedAt = DateTime.Now,
+                CreatedAt = new DateTime(2024, 08, 13).ToUniversalTime(),
+                UpdatedAt = new DateTime(2024, 08, 13).ToUniversalTime(),
                 Name = "Sanders Vieira",
                 Ddd = "11",
                 Phone = "98155-4567",
@@ -44,7 +44,8 @@ namespace API.SwaggerExamples
                 new()
                 {
                     Id = 1,
-                    CreatedAt = DateTime.Now,
+                    CreatedAt = new DateTime(2024,08,13).ToUniversalTime(),
+                    UpdatedAt = new DateTime(2024,08,13).ToUniversalTime(),
                     Name = "Sanders Vieira",
                     Ddd = "11",
                     Phone = "98155-4567",
