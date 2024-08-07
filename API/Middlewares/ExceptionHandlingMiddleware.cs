@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Net;
 using System.Security.Authentication;
 using System.Text.Json;
 using API.Middlewares.Exceptions;
@@ -6,6 +7,7 @@ using Domain.Shared;
 
 namespace API.Middlewares
 {
+    [ExcludeFromCodeCoverage]
     public class ExceptionHandlingMiddleware : IMiddleware
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)

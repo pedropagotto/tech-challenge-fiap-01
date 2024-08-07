@@ -1,5 +1,8 @@
-﻿namespace Domain.Shared
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Domain.Shared
 {
+    [ExcludeFromCodeCoverage]
     public class UnauthorizedErrorModel
     {
         public string Error { get; set; }

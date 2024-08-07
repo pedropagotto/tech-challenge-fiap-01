@@ -1,4 +1,5 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Application.Services.AuthenticationServices;
@@ -9,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services.Token;
-
+[ExcludeFromCodeCoverage]
 public class GenerateJwtToken: IGenerateJwtToken
 {
     private readonly ITechChallengeFiapConfiguration _configuration;

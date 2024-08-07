@@ -1,8 +1,9 @@
-﻿using Domain.Entities;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra;
-
+[ExcludeFromCodeCoverage]
 public class AppDbContext: DbContext
 {
     public AppDbContext(DbContextOptions options)

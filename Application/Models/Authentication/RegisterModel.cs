@@ -1,7 +1,9 @@
-﻿using Domain.Enums;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Enums;
 
 namespace Application.Models.Authentication;
 
+[ExcludeFromCodeCoverage]
 public class RegisterModel
 {
     public string FirstName { get; set; }

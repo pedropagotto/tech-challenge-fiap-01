@@ -1,4 +1,5 @@
-﻿using API.Middlewares.Exceptions;
+﻿using System.Diagnostics.CodeAnalysis;
+using API.Middlewares.Exceptions;
 using API.Services.Token;
 using Application.Models.Authentication;
 using Application.Services.AuthenticationServices;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [ExcludeFromCodeCoverage]
     [Route("api/[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase

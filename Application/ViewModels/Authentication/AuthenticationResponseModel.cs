@@ -1,5 +1,7 @@
-﻿namespace Application.ViewModels.Authentication;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace Application.ViewModels.Authentication;
+[ExcludeFromCodeCoverage]
 public class AuthenticationResponseModel
 {
     public string Email { get; set; }

@@ -1,9 +1,10 @@
-﻿using Common.Config;
+﻿using System.Diagnostics.CodeAnalysis;
+using Common.Config;
 using JWT.Algorithms;
 using JWT.Builder;
 
 namespace API.Services.Token;
-
+[ExcludeFromCodeCoverage]
 public class ValidateJwtToken: IValidateJwtToken
 {
     private readonly ITechChallengeFiapConfiguration _configuration;

@@ -1,5 +1,8 @@
-﻿namespace API.Config
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace API.Config
 {
+    [ExcludeFromCodeCoverage]
     public static class CorsConfig
     {
         public static IServiceCollection AddCorsConfig(this IServiceCollection services)

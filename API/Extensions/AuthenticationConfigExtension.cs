@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using Common.Config;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions;
-
+[ExcludeFromCodeCoverage]
 public static class AuthenticationConfigExtension
 {
     /// <summary>

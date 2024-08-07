@@ -1,8 +1,10 @@
-﻿using Domain.Shared;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Shared;
 using Swashbuckle.AspNetCore.Filters;
 
 namespace API.SwaggerExamples
 {
+    [ExcludeFromCodeCoverage]
     public class NotFoundResponseExample : IExamplesProvider<ErrorModel>
     {
         public ErrorModel GetExamples()
@@ -10,7 +12,8 @@ namespace API.SwaggerExamples
             return new ErrorModel("001", "O contato não encontrado.");
         }
     }
-
+    
+    [ExcludeFromCodeCoverage]
     public class BadRequestResponseExample : IExamplesProvider<ValidationErrorModel>
     {
         public ValidationErrorModel GetExamples()
@@ -29,6 +32,7 @@ namespace API.SwaggerExamples
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public class InternalServerErrorExample : IExamplesProvider<ErrorModel>
     {
         public ErrorModel GetExamples()

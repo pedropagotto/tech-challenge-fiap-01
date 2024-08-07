@@ -1,11 +1,12 @@
-﻿using Domain.Entities;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Entities;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infra.Configurations;
-
+[ExcludeFromCodeCoverage]
 public class AuthenticationConfigurations: IEntityTypeConfiguration<Authentication>
 {
     public void Configure(EntityTypeBuilder<Authentication> builder)
