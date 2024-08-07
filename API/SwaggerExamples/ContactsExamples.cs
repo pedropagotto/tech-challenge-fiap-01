@@ -10,10 +10,10 @@ namespace API.SwaggerExamples
         {
             return new ContactRequestModel
             {
-                Name = "Sanders Vieira",
+                Name = "Jose Vieira",
                 Ddd = "11",
                 Phone = "98155-4567",
-                Email = "sanders.vieira@example.com"
+                Email = "jose.vieira@example.com"
             };
         }
     }
@@ -27,10 +27,10 @@ namespace API.SwaggerExamples
                 Id = 1,
                 CreatedAt = new DateTime(2024, 08, 13).ToUniversalTime(),
                 UpdatedAt = new DateTime(2024, 08, 13).ToUniversalTime(),
-                Name = "Sanders Vieira",
+                Name = "Jose Vieira",
                 Ddd = "11",
                 Phone = "98155-4567",
-                Email = "sanders.vieira@example.com"
+                Email = "jose.vieira@example.com"
             };
         }
     }
@@ -46,10 +46,10 @@ namespace API.SwaggerExamples
                     Id = 1,
                     CreatedAt = new DateTime(2024,08,13).ToUniversalTime(),
                     UpdatedAt = new DateTime(2024,08,13).ToUniversalTime(),
-                    Name = "Sanders Vieira",
+                    Name = "Jose Vieira",
                     Ddd = "11",
                     Phone = "98155-4567",
-                    Email = "sanders.vieira@example.com"
+                    Email = "jose.vieira@example.com"
                 }
             };
         }
