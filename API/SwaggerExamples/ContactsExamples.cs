@@ -1,9 +1,11 @@
-﻿using Application.ViewModels.Contact;
+﻿using System.Diagnostics.CodeAnalysis;
+using Application.ViewModels.Contact;
 
 namespace API.SwaggerExamples
 {
     using Swashbuckle.AspNetCore.Filters;
 
+    [ExcludeFromCodeCoverage]
     public class ContactRequestExample : IExamplesProvider<ContactRequestModel>
     {
         public ContactRequestModel GetExamples()
@@ -18,6 +20,7 @@ namespace API.SwaggerExamples
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ContactResponseExample : IExamplesProvider<ContactResponseModel>
     {
         public ContactResponseModel GetExamples()
@@ -35,6 +38,7 @@ namespace API.SwaggerExamples
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public class ListOfContactResponseExample : IExamplesProvider<IList<ContactResponseModel>>
     {
         public IList<ContactResponseModel> GetExamples()

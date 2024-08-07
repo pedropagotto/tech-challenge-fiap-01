@@ -1,9 +1,10 @@
-﻿using Application.Models.Authentication;
+﻿using System.Diagnostics.CodeAnalysis;
+using Application.Models.Authentication;
 using AutoMapper;
 using Domain.Entities;
 
 namespace Application.Mappings;
-
+[ExcludeFromCodeCoverage]
 public class UserMapping: Profile
 {
     public UserMapping()

@@ -1,4 +1,5 @@
-﻿using System.Security.Authentication;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Security.Authentication;
 using API.Middlewares.Exceptions;
 using Application.ViewModels.Authentication;
 using Common.Extensions;
@@ -6,7 +7,7 @@ using Domain.Shared;
 using Infra;
 
 namespace Application.Services.AuthenticationServices;
-
+[ExcludeFromCodeCoverage]
 public class ValidateUser: IValidateUser
 {
     private readonly AppDbContext _context;

@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Entities;
-
+[ExcludeFromCodeCoverage]
 public class User: EntityBase
 {
     public string FirstName { get; set; }

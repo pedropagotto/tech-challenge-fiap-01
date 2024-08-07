@@ -1,9 +1,10 @@
-﻿using Domain.Entities;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infra.Configurations;
-
+[ExcludeFromCodeCoverage]
 public class ContactConfigurations: IEntityTypeConfiguration<Contact>
 {
     public void Configure(EntityTypeBuilder<Contact> builder)

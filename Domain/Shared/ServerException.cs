@@ -1,5 +1,8 @@
-﻿namespace API.Middlewares.Exceptions
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace API.Middlewares.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class ServerException : Exception
     {
         public string Code;

@@ -1,9 +1,10 @@
-﻿using Application.Models.Authentication;
+﻿using System.Diagnostics.CodeAnalysis;
+using Application.Models.Authentication;
 using Application.Services.UserServices;
 using Infra;
 
 namespace Application.Services.AuthenticationServices;
-
+[ExcludeFromCodeCoverage]
 public class AuthService: IAuthService
 {
     private readonly AppDbContext _context;

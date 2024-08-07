@@ -1,9 +1,11 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
 namespace API.Config
 {
+    [ExcludeFromCodeCoverage]
     public static class SwaggerConfig
     {
         public static IServiceCollection AddSwaggerConfig(this IServiceCollection services)

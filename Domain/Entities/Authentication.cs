@@ -1,7 +1,8 @@
-﻿using Domain.Enums;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Enums;
 
 namespace Domain.Entities;
-
+[ExcludeFromCodeCoverage]
 public class Authentication: EntityBase
 {
     public string Email { get; set; }

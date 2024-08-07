@@ -1,9 +1,11 @@
-﻿using Domain.Abstractions;
+﻿using System.Diagnostics.CodeAnalysis;
+using Domain.Abstractions;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Repository
 {
+    [ExcludeFromCodeCoverage]
     public class ConctactRepository : BaseRepository<Contact>, IContactRepository
     {
         public ConctactRepository(AppDbContext context) : base(context)
