@@ -26,6 +26,7 @@ namespace API.Controllers
         /// <param name="DDD" example="11">Opção de filtro por região pelo DDD.</param>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(UnauthorizedErrorModel), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<IList<ContactResponseModel>>> ListAllContacts([FromQuery] string? DDD = null)
         {
@@ -40,6 +41,7 @@ namespace API.Controllers
         /// <param name="id" example="1">Id do contato buscado.</param>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(UnauthorizedErrorModel), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ContactResponseModel>> GetContact([FromRoute] int id)
@@ -60,6 +62,7 @@ namespace API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UnauthorizedErrorModel), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ContactResponseModel>> CreateContact([FromBody] ContactRequestModel contact)
         {
@@ -78,6 +81,7 @@ namespace API.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ValidationErrorModel), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(UnauthorizedErrorModel), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ContactResponseModel>> PutContact([FromRoute] int id, [FromBody] ContactRequestModel contact)
@@ -102,6 +106,7 @@ namespace API.Controllers
         /// <returns></returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(UnauthorizedErrorModel), StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ErrorModel), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> DeleteContact([FromRoute] int id)
