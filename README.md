@@ -19,13 +19,20 @@
 # Techs Utilizadas:
 
 ✅ - .NET 8 (Web Api), JWT
+
 ✅ - EF Core
+
 ✅ - Docker, Docker Compose
-✅ - Fluent Validation, AutoMapper,
-✅ - XUnit, Bogus, Fluent Assertions, Moq 
+
+✅ - Fluent Validation, AutoMapper
+
+✅ - XUnit, Bogus, Fluent Assertions, Moq
+
 ✅ - Banco de dados Postgres
 
+
 # Arquitetura:
+
 ✅ - Arquitetura baseada em clean architecture
 
 # Para  iniciar o banco:
