@@ -24,19 +24,6 @@ jobs:
       - name: Run tests with coverage
         run: dotnet test --no-build --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./coverage/
 
-      - name: Install ReportGenerator
-        run: dotnet tool install --global dotnet-reportgenerator-globaltool
-        
-      - name: Generate HTML report
-        run: |
-          reportgenerator -reports:Tests/TestResults/*/coverage.cobertura.xml -targetdir:./coverage_report -reporttypes:Html
-
-      - name: Upload coverage report artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage-report
-          path: ./coverage_report
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
