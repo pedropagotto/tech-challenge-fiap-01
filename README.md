@@ -12,9 +12,9 @@
 # Ferramentas:
 🎈 - [Miro](https://miro.com/app/board/uXjVKwg7ktM=/?share_link_id=761946195858)
 
-🎈 - [Github] (https://github.com/pedropagotto/tech-challenge-fiap-01)
+🎈 - [Github](https://github.com/pedropagotto/tech-challenge-fiap-01)
 
-🎈 - [Imagem Docker] - (https://github.com/users/pedropagotto/packages/container/package/tech-challenge-fiap-01)
+🎈 - [Imagem Docker](https://github.com/users/pedropagotto/packages/container/package/tech-challenge-fiap-01)
 
 # Techs Utilizadas:
 
