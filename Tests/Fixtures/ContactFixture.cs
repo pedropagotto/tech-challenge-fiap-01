@@ -1,4 +1,5 @@
-﻿using Application.ViewModels.Contact;
+﻿using Application.ViewModels;
+using Application.ViewModels.Contact;
 using Bogus;
 using Domain.Entities;
 
@@ -11,7 +12,7 @@ namespace Tests.Fixtures
         {
             var contact = new Faker<Contact>()
                .RuleFor(c => c.Id, f => (int)f.Random.UShort())
-               //.RuleFor(c => c.CreatedAt, f => f.Date.Recent())
+               .RuleFor(c => c.CreatedAt, f => f.Date.Recent())
                .RuleFor(c => c.Name, f => f.Person.FullName)
                .RuleFor(c => c.Email, f => f.Person.Email)
                .RuleFor(c => c.Ddd, f => f.Random.Number(11, 99).ToString())
