@@ -6,6 +6,7 @@ using AutoMapper;
 using Common.Config;
 using Infra;
 using Microsoft.EntityFrameworkCore;
+using Prometheus;
 using System.Reflection;
 
 var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -58,12 +59,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+app.UseHttpMetrics();
 
 app.UseAuthorization();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
+app.MapMetrics();
 app.MapControllers();
 
 app.Run();
