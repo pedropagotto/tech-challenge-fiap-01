@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres.db:
-    image: postgres:16-bullseye
+    image: postgres:17-bullseye
     container_name: postgres.db
     environment:
       POSTGRES_USER: postech
