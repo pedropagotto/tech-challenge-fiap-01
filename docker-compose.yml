@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres.db:
-    image: postgres:17-bullseye
+    image: postgres:latest
     container_name: postgres.db
     environment:
       POSTGRES_USER: postech
@@ -14,6 +14,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  postgres.exporter:
+    image: wrouesnel/postgres_exporter:latest
+    environment:
+      DATA_SOURCE_NAME: postgresql://postech:postech@postgres:5432/techchallenge01?sslmode=disable
+    depends_on:
+      - postgres.db
+    networks:
+      - mynetwork
+    ports:
+      - "9187:9187"
   contacts.api:
     image: ${DOCKER_REGISTRY-}contactsapi
     container_name: contacts.api

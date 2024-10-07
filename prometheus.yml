@@ -6,3 +6,7 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['contacts.api:8080']
+  - job_name: 'postgres'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["postgres.exporter:9187"]
