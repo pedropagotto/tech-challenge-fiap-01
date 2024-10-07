@@ -17,11 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{1CABF5C0-15A9-401F-B2F5-994014AEE08D}"
 	ProjectSection(SolutionItems) = preProject
+		artillery_test.yml = artillery_test.yml
 		.github\workflows\ci.yml = .github\workflows\ci.yml
-		Dockerfile = Dockerfile
 		docker-compose.yml = docker-compose.yml
-		README.md = README.md
+		Dockerfile = Dockerfile
 		prometheus.yml = prometheus.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
