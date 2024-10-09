@@ -3,24 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{8660B257-B648-4531-8A3A-B39DCD556F6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{8660B257-B648-4531-8A3A-B39DCD556F6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{6837F59F-11E5-44B3-8C6D-31AA2EF83925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{6837F59F-11E5-44B3-8C6D-31AA2EF83925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{96A66507-4EAD-465E-AAE6-1C91114D7A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{96A66507-4EAD-465E-AAE6-1C91114D7A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{F19D08BD-9C27-4C72-B497-CEAFCF5962ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj", "{F19D08BD-9C27-4C72-B497-CEAFCF5962ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{712F681B-412D-4F87-945B-3BF3F7B3BDB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{712F681B-412D-4F87-945B-3BF3F7B3BDB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{B8D1CCE0-21EA-4DF1-A2A8-C6F3416043FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B8D1CCE0-21EA-4DF1-A2A8-C6F3416043FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{1CABF5C0-15A9-401F-B2F5-994014AEE08D}"
 	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
-		README.md = README.md
-		Dockerfile = Dockerfile
+		artillery_test.yml = artillery_test.yml
 		.github\workflows\ci.yml = .github\workflows\ci.yml
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		prometheus.yml = prometheus.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global

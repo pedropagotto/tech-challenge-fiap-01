@@ -4,8 +4,12 @@ using API.Middlewares;
 using Application.Mappings;
 using AutoMapper;
 using Common.Config;
+using HealthChecks.UI.Client;
 using Infra;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
+using Prometheus;
+using Prometheus.SystemMetrics;
 using System.Reflection;
 
 var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -49,6 +53,12 @@ builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddSingleton<ITechChallengeFiapConfiguration>(prop => configuration);
 builder.Services.AddDependencyInjectionConfig();
 
+builder.Services.AddHealthChecks()
+    .AddNpgSql(config.GetConnectionString("PostgresConnectionString")!)
+    .ForwardToPrometheus();
+
+builder.Services.AddSystemMetrics();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,12 +68,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponseNoExceptionDetails
+});
+
+app.UseHttpMetrics();
 
 app.UseAuthorization();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
+app.MapMetrics();
 app.MapControllers();
 
 app.Run();
